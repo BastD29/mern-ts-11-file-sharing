@@ -7,15 +7,8 @@ const FileForm: FC = () => {
   };
 
   return (
-    <form className={style["file-form"]}>
+    <form onSubmit={handleSubmit} className={style["file-form"]}>
       <h2>File form</h2>
-      <label htmlFor="file">File:</label>
-      <input type="file" id="file" name="file" required />
-      <label htmlFor="password">Password:</label>
-      <input type="password" id="password" name="password" />
-      <button type="submit" onSubmit={handleSubmit}>
-        Submit
-      </button>
     </form>
   );
 };
