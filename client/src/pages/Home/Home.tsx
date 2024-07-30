@@ -1,10 +1,11 @@
 import { FC } from "react";
+import FileForm from "../../components/FileForm/FileForm";
 import style from "./Home.module.scss";
 
 const Home: FC = () => {
   return (
     <div className={style["home"]}>
-      <h2>Home</h2>
+      <FileForm />
     </div>
   );
 };
