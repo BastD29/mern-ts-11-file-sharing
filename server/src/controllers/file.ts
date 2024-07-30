@@ -3,6 +3,7 @@ import File from "../models/file";
 
 const uploadFile = async (req: Request, res: Response) => {
   try {
+    console.log("Uploaded file details:", req.file);
     const newFile = new File({
       filename: req.file?.originalname,
       path: req.file?.path,
