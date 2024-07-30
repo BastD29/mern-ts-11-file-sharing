@@ -1,10 +1,10 @@
 import express from "express";
 import cors from "cors";
 import { NODE_ENV, PORT } from "./config/environments";
-// import { connectDB } from "./config/db";
+import { connectDB } from "./config/db";
 import { corsOptions } from "./config/cors";
 
-// connectDB();
+connectDB();
 
 const app = express();
 
