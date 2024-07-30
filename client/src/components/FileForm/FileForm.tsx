@@ -4,14 +4,14 @@ import style from "./FileForm.module.scss";
 
 const FileForm: FC = () => {
   const [file, setFile] = useState<File | null>(null);
-  console.log("file:", file);
+  // console.log("file:", file);
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setFile(e.target.files[0]);
-      console.log("file has been set");
+      // console.log("file has been set");
     } else {
-      console.log("file has not been set");
+      // console.log("file has not been set");
     }
   };
 
@@ -19,7 +19,7 @@ const FileForm: FC = () => {
     event.preventDefault();
 
     if (file) {
-      console.log("file:", file);
+      // console.log("file:", file);
       try {
         await uploadFile(file);
       } catch (error) {
