@@ -1,5 +1,20 @@
 import { Request, Response } from "express";
+import File from "../models/file";
 
-const uploadFile = async (req: Request, res: Response) => {};
+const uploadFile = async (req: Request, res: Response) => {
+  try {
+    const newFile = new File({
+      filename: req.file?.originalname,
+      path: req.file?.path,
+    });
+
+    await newFile.save();
+    // res.json(newFile);
+    res.status(200).send({ message: "File uploaded successfully", newFile });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Error uploading file" });
+  }
+};
 
 export { uploadFile };
