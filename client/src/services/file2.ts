@@ -4,14 +4,14 @@ type UploadFileParamsType = {
   file: File;
 };
 
-type FileType = {
+export type FileType = {
   filename: string;
   path: string;
 };
 
 type FileResponseType = {
   message: string;
-  file: FileType;
+  newFile: FileType;
 };
 
 const uploadFile = async (
@@ -34,6 +34,4 @@ const uploadFile = async (
   });
 };
 
-// const downloadFile = async (): Promise<ApiResponseType< => {};
-
-export { uploadFile /* downloadFile */ };
+export { uploadFile };
