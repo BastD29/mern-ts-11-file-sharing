@@ -34,4 +34,6 @@ const uploadFile = async (
   });
 };
 
-export { uploadFile };
+// const downloadFile = async (): Promise<ApiResponseType< => {};
+
+export { uploadFile /* downloadFile */ };
