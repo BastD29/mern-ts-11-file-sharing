@@ -25,7 +25,11 @@
 
 //   const _headers: any = { ...headers, ...params?.headers };
 
-//   const response = await fetch(`${params.baseUrl || BASE_URL}${params.url}`, {
+//   const url = `${params.baseUrl || BASE_URL}${params.url}`;
+//   console.log("url:", url);
+
+//   // const response = await fetch(`${params.baseUrl || BASE_URL}${params.url}`, {
+//   const response = await fetch(url, {
 //     method: params.method || "get",
 //     body: params?.body && JSON.stringify(params.body),
 //     headers: _headers,
