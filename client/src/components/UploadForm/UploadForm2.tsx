@@ -1,9 +1,9 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { uploadFile } from "../../services/file2";
 import { toast } from "react-toastify";
-import style from "./FileForm.module.scss";
+import style from "./UploadForm.module.scss";
 
-const FileForm: FC = () => {
+const UploadForm: FC = () => {
   const [file, setFile] = useState<File | null>(null);
   console.log("file:", file);
 
@@ -33,12 +33,12 @@ const FileForm: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={style["file-form"]}>
-      <h2>File form</h2>
+    <form onSubmit={handleSubmit} className={style["upload-form"]}>
+      <h2>Upload form</h2>
       <input type="file" name="file" onChange={handleFileChange} />
-      <button type="submit">Submit</button>
+      <button type="submit">Upload file</button>
     </form>
   );
 };
 
-export default FileForm;
+export default UploadForm;

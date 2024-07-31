@@ -2,7 +2,7 @@
 // import { uploadFile } from "../../services/file";
 // import style from "./FileForm.module.scss";
 
-// const FileForm: FC = () => {
+// const UploadForm: FC = () => {
 //   const [file, setFile] = useState<File | null>(null);
 //   // console.log("file:", file);
 
@@ -37,4 +37,4 @@
 //   );
 // };
 
-// export default FileForm;
+// export default UploadForm;

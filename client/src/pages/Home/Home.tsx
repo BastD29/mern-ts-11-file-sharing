@@ -1,11 +1,11 @@
 import { FC } from "react";
-import FileForm from "../../components/FileForm/FileForm2";
+import UploadForm from "../../components/UploadForm/UploadForm2";
 import style from "./Home.module.scss";
 
 const Home: FC = () => {
   return (
     <div className={style["home"]}>
-      <FileForm />
+      <UploadForm />
     </div>
   );
 };
