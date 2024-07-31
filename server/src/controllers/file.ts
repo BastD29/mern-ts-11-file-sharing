@@ -22,7 +22,7 @@ const uploadFile = async (req: Request, res: Response) => {
 const downloadFile = async (req: Request, res: Response) => {
   try {
     console.log("Downloaded file details:", req.file);
-    const filename = req.file?.filename;
+    const filename = req.params.filename;
     console.log("filename:", filename);
     const file = await File.findOne({ filename });
     console.log("file:", file);
