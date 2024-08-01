@@ -2,7 +2,6 @@ import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { FileType, uploadFile } from "../../services/file2";
 import { toast } from "react-toastify";
 import style from "./UploadForm.module.scss";
-import x from "../../../../server/uploads/email_nodemailer_vs_sendgrid_1.png";
 
 const UploadForm: FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -40,11 +39,7 @@ const UploadForm: FC = () => {
       {uploadedFile && (
         <div>
           <h3>Uploaded Image:</h3>
-          <img
-            // src={uploadedFile.path}
-            src={x}
-            alt={uploadedFile.filename}
-          />
+          <img src={uploadedFile.path} alt={uploadedFile.filename} />
         </div>
       )}
     </form>

@@ -1,13 +1,13 @@
 import { FC } from "react";
 import UploadForm from "../../components/UploadForm/UploadForm2";
-// import DownloadForm from "../../components/DownloadForm/DownloadForm";
+import FileList from "../../components/FileList/FileList";
 import style from "./Home.module.scss";
 
 const Home: FC = () => {
   return (
     <div className={style["home"]}>
       <UploadForm />
-      {/* <DownloadForm /> */}
+      <FileList />
     </div>
   );
 };
