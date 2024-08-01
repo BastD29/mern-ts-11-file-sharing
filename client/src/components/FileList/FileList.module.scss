@@ -1,5 +1,4 @@
 .file-list {
-  &__file {
-    width: 400px;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }

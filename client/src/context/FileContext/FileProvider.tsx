@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useReducer } from "react";
 import { initialState, reducer } from "../../reducers/file";
 import { FileContext } from "./FileContext";
 import { fetchFiles } from "../../services/file2";
-import { SET_UPLOADED_FILE } from "../../constants/actions";
+import { SET_UPLOADED_FILES } from "../../constants/actions";
 
 type FileProviderProps = {
   children: ReactNode;
@@ -17,7 +17,7 @@ const FileProvider: FC<FileProviderProps> = ({ children }) => {
       try {
         const { data } = await fetchFiles();
         if (data && data.length > 0) {
-          dispatch({ type: SET_UPLOADED_FILE, payload: data[0] });
+          dispatch({ type: SET_UPLOADED_FILES, payload: data });
         }
       } catch (error) {
         console.error(error);

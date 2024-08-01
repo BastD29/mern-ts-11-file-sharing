@@ -1,4 +1,8 @@
-import { SET_FILE, SET_UPLOADED_FILE } from "../constants/actions";
+import {
+  SET_FILE,
+  SET_UPLOADED_FILE,
+  SET_UPLOADED_FILES,
+} from "../constants/actions";
 
 // services
 
@@ -28,13 +32,22 @@ type SetUploadedFileActionType = {
   payload: FileType | null;
 };
 
-type FileActionType = SetFileActionType | SetUploadedFileActionType;
+type SetUploadedFilesActionType = {
+  type: typeof SET_UPLOADED_FILES;
+  payload: FileType[] | null;
+};
+
+type FileActionType =
+  | SetFileActionType
+  | SetUploadedFileActionType
+  | SetUploadedFilesActionType;
 
 // reducer
 
 type FileStateType = {
   file: File | null;
   uploadedFile: FileType | null;
+  uploadedFiles: FileType[] | null;
 };
 
 export type {
@@ -46,6 +59,7 @@ export type {
   // actions
   SetFileActionType,
   SetUploadedFileActionType,
+  SetUploadedFilesActionType,
   FileActionType,
 
   // reducer
