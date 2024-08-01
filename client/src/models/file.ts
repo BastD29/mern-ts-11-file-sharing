@@ -25,7 +25,7 @@ type SetFileActionType = {
 
 type SetUploadedFileActionType = {
   type: typeof SET_UPLOADED_FILE;
-  payload: FileType;
+  payload: FileType | null;
 };
 
 type FileActionType = SetFileActionType | SetUploadedFileActionType;

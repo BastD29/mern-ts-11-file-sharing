@@ -1,5 +1,5 @@
 import { FC } from "react";
-import UploadForm from "../../components/UploadForm/UploadForm2";
+import UploadForm from "../../components/UploadForm/UploadForm3";
 import FileList from "../../components/FileList/FileList";
 import style from "./Home.module.scss";
 
