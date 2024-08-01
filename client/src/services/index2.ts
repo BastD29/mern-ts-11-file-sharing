@@ -43,15 +43,26 @@ async function fetcher<T>(params: ApiRequestType): Promise<ApiResponseType<T>> {
     credentials: "include",
   });
 
+  // if (response.ok) {
+  //   if (response.status !== 204) {
+  //     const jsonResponse = await response.json();
+
+  //     return { data: jsonResponse };
+  //   }
+
+  //   /* @ts-ignore */
+  //   return { data: { status: response.status } };
+  // }
+
   if (response.ok) {
-    if (response.status !== 204) {
+    const contentType = response.headers.get("content-type");
+    if (contentType && contentType.includes("application/json")) {
       const jsonResponse = await response.json();
-
       return { data: jsonResponse };
+    } else {
+      const blobResponse = await response.blob();
+      return { data: blobResponse as any };
     }
-
-    /* @ts-ignore */
-    return { data: { status: response.status } };
   }
 
   if (!response.ok) {

@@ -34,10 +34,13 @@ const fetchFiles = async (): Promise<ApiResponseType<FileType[]>> =>
 
 const downloadFile = async (
   body: DownloadFileParamsType
-): Promise<ApiResponseType<any>> =>
-  fetcher({
+): Promise<ApiResponseType<Blob>> =>
+  fetcher<Blob>({
     method: "get",
     url: `/api/files/download/${body.filename}`,
+    headers: {
+      "Content-Type": "application/octet-stream",
+    },
   });
 
 export { uploadFile, fetchFiles, downloadFile };
