@@ -1,8 +1,16 @@
 .file-card {
   //   width: 200px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
 
   img {
     width: fit-content;
     height: 200px;
+  }
+
+  button {
+    width: 200px;
   }
 }

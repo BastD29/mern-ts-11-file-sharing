@@ -43,7 +43,6 @@ const UploadForm: FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className={style["upload-form"]}>
-      <h2>Upload form</h2>
       <input type="file" name="file" onChange={handleFileChange} />
       <button type="submit">Upload file</button>
     </form>

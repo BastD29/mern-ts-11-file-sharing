@@ -11,6 +11,7 @@ const FileCard: FC<FileCardProps> = ({ file }) => {
     <div className={style["file-card"]}>
       <h3>{file.filename}</h3>
       <img src={file.path} alt={file.filename} />
+      <button>Download</button>
     </div>
   );
 };
