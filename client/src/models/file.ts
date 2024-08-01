@@ -11,6 +11,10 @@ type UploadFileParamsType = {
   file: File;
 };
 
+type DownloadFileParamsType = {
+  filename: string;
+};
+
 type FileType = {
   filename: string;
   path: string;
@@ -60,6 +64,7 @@ type FileStateType = {
 export type {
   // services
   UploadFileParamsType,
+  DownloadFileParamsType,
   FileType,
   FileResponseType,
 

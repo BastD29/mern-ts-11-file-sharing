@@ -1,4 +1,5 @@
 import {
+  DownloadFileParamsType,
   FileResponseType,
   FileType,
   UploadFileParamsType,
@@ -31,4 +32,12 @@ const fetchFiles = async (): Promise<ApiResponseType<FileType[]>> =>
     url: "/api/files",
   });
 
-export { uploadFile, fetchFiles };
+const downloadFile = async (
+  body: DownloadFileParamsType
+): Promise<ApiResponseType<any>> =>
+  fetcher({
+    method: "get",
+    url: `/api/files/download/${body.filename}`,
+  });
+
+export { uploadFile, fetchFiles, downloadFile };
