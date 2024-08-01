@@ -12,7 +12,11 @@ const FileList: FC = () => {
       {uploadedFile && (
         <div>
           <h3>Uploaded Image:</h3>
-          <img src={uploadedFile.path} alt={uploadedFile.filename} />
+          <img
+            className={style["file-list__file"]}
+            src={uploadedFile.path}
+            alt={uploadedFile.filename}
+          />
         </div>
       )}
     </div>
