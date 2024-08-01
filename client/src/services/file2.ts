@@ -1,18 +1,5 @@
+import { FileResponseType, UploadFileParamsType } from "../models/file";
 import { ApiResponseType, fetcher } from "./index2";
-
-type UploadFileParamsType = {
-  file: File;
-};
-
-export type FileType = {
-  filename: string;
-  path: string;
-};
-
-type FileResponseType = {
-  message: string;
-  newFile: FileType;
-};
 
 const uploadFile = async (
   body: UploadFileParamsType
