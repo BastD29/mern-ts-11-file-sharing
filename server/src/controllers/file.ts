@@ -4,7 +4,7 @@ import path from "path";
 
 const uploadFile = async (req: Request, res: Response) => {
   try {
-    console.log("Uploaded file details:", req.file);
+    // console.log("Uploaded file details:", req.file);
 
     const fileUrl = `${req.protocol}://${req.get("host")}/uploads/${
       req.file?.filename
@@ -40,7 +40,7 @@ const downloadFile = async (req: Request, res: Response) => {
   try {
     const filename = req.params.filename;
     const file = await File.findOne({ filename });
-    console.log("file:", file);
+    // console.log("file:", file);
 
     if (!file) {
       return res.status(404).send({ message: "File not found" });
