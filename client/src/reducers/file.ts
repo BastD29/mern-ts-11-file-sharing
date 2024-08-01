@@ -2,6 +2,7 @@ import {
   SET_FILE,
   SET_UPLOADED_FILES,
   SET_UPLOADED_FILE,
+  ADD_UPLOADED_FILE,
 } from "../constants/actions";
 import { FileActionType, FileStateType } from "../models/file";
 
@@ -30,6 +31,13 @@ const reducer = (
       return {
         ...state,
         uploadedFiles: action.payload,
+      };
+    case ADD_UPLOADED_FILE:
+      return {
+        ...state,
+        uploadedFiles: state.uploadedFiles
+          ? [...state.uploadedFiles, action.payload]
+          : [action.payload],
       };
     default:
       return state;

@@ -1,4 +1,5 @@
 import {
+  ADD_UPLOADED_FILE,
   SET_FILE,
   SET_UPLOADED_FILE,
   SET_UPLOADED_FILES,
@@ -37,10 +38,16 @@ type SetUploadedFilesActionType = {
   payload: FileType[] | null;
 };
 
+type AddUploadedFileActionType = {
+  type: typeof ADD_UPLOADED_FILE;
+  payload: FileType;
+};
+
 type FileActionType =
   | SetFileActionType
   | SetUploadedFileActionType
-  | SetUploadedFilesActionType;
+  | SetUploadedFilesActionType
+  | AddUploadedFileActionType;
 
 // reducer
 
@@ -60,6 +67,7 @@ export type {
   SetFileActionType,
   SetUploadedFileActionType,
   SetUploadedFilesActionType,
+  AddUploadedFileActionType,
   FileActionType,
 
   // reducer
