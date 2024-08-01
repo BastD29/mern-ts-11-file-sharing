@@ -32,7 +32,7 @@ async function fetcher<T>(params: ApiRequestType): Promise<ApiResponseType<T>> {
   const _headers: any = { ...headers, ...params?.headers };
 
   const url = `${params.baseUrl || BASE_URL}${params.url}`;
-  console.log("url:", url);
+  // console.log("url:", url);
 
   // const response = await fetch(`${params.baseUrl || BASE_URL}${params.url}`, {
   const response = await fetch(url, {

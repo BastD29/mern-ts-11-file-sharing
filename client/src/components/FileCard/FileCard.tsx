@@ -11,17 +11,17 @@ const FileCard: FC<FileCardProps> = ({ file }) => {
   const handleDownload = async () => {
     try {
       const filename = file.filename;
-      console.log("filename:", filename);
+      // console.log("filename:", filename);
       const { data } = await downloadFile({ filename });
-      console.log("data:", data);
+      // console.log("data:", data);
 
       if (data) {
         const blob = data;
-        console.log("blob:", blob);
+        // console.log("blob:", blob);
         const downloadUrl = window.URL.createObjectURL(blob);
-        console.log("downloadUrl:", downloadUrl);
+        // console.log("downloadUrl:", downloadUrl);
         const a = document.createElement("a");
-        console.log("a:", a);
+        // console.log("a:", a);
         a.href = downloadUrl;
         a.download = filename;
         document.body.appendChild(a);

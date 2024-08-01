@@ -10,7 +10,7 @@ type FileProviderProps = {
 const FileProvider: FC<FileProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log("state:", state);
+  // console.log("state:", state);
 
   useEffect(() => {
     const getFiles = async () => {
