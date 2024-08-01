@@ -1,4 +1,8 @@
-import { FileResponseType, UploadFileParamsType } from "../models/file";
+import {
+  FileResponseType,
+  FileType,
+  UploadFileParamsType,
+} from "../models/file";
 import { ApiResponseType, fetcher } from "./index2";
 
 const uploadFile = async (
@@ -21,4 +25,10 @@ const uploadFile = async (
   });
 };
 
-export { uploadFile };
+const fetchFiles = async (): Promise<ApiResponseType<FileType[]>> =>
+  fetcher({
+    method: "get",
+    url: "/api/files",
+  });
+
+export { uploadFile, fetchFiles };

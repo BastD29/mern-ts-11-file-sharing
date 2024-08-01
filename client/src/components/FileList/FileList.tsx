@@ -1,6 +1,6 @@
 import { FC } from "react";
-import style from "./FileList.module.scss";
 import { useFileContext } from "../../hooks/useFileContext";
+import style from "./FileList.module.scss";
 
 const FileList: FC = () => {
   const {
