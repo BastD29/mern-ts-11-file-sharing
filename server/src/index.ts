@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/files", file);
 const uploadsPath = path.join(__dirname, "../uploads");
-console.log("uploadsPath:", uploadsPath);
+// console.log("uploadsPath:", uploadsPath);
 app.use("/uploads", express.static(uploadsPath));
 
 app.listen(PORT, () => {

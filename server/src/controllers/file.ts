@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import File from "../models/file";
-// import path from "path";
 
 const uploadFile = async (req: Request, res: Response) => {
   try {
@@ -9,7 +8,7 @@ const uploadFile = async (req: Request, res: Response) => {
     const fileUrl = `${req.protocol}://${req.get("host")}/uploads/${
       req.file?.filename
     }`;
-    console.log("fileUrl:", fileUrl);
+    // console.log("fileUrl:", fileUrl);
 
     const newFile = new File({
       filename: req.file?.originalname,
@@ -26,31 +25,14 @@ const uploadFile = async (req: Request, res: Response) => {
   }
 };
 
-// const downloadFile = async (req: Request, res: Response) => {
-//   try {
-//     console.log("Downloaded file details:", req.file);
-//     const filename = req.params.filename;
-//     console.log("filename:", filename);
-//     const file = await File.findOne({ filename });
-//     console.log("file:", file);
+const getFiles = async (req: Request, res: Response) => {
+  try {
+    const files = await File.find();
+    res.status(200).send(files);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Error retrieving files" });
+  }
+};
 
-//     if (!file) {
-//       return res.status(404).send({ message: "File not found" });
-//     }
-
-//     const filePath = path.resolve(file.path);
-//     console.log("filePath:", filePath);
-
-//     res.download(filePath, file.filename, (err) => {
-//       if (err) {
-//         console.error(err);
-//         res.status(500).send({ message: "Error downloading file" });
-//       }
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send({ message: "Error downloading file" });
-//   }
-// };
-
-export { uploadFile /* , downloadFile */ };
+export { uploadFile, getFiles };
