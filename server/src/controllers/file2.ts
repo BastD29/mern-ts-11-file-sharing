@@ -4,11 +4,12 @@ import path from "path";
 
 const uploadFile = async (req: Request, res: Response) => {
   try {
+    const file = req.file as Express.MulterS3.File | undefined; // location property does not exist on Express.Multer.File
     console.log("Uploaded file details:", req.file);
 
     const newFile = new File({
-      filename: req.file?.originalname,
-      path: req.file?.path,
+      filename: file?.originalname,
+      path: file?.location, // ex: 'https://file-bucket-test-bd29.s3.us-east-1.amazonaws.com/email_nodemailer_vs_sendgrid_1.png',
     });
 
     await newFile.save();
