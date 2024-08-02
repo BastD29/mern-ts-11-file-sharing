@@ -5,12 +5,10 @@ declare namespace NodeJS {
     ALLOWED_ORIGIN: string;
     MONGO_URI: string;
 
-    // nodemailer
-    EMAIL_HOST: string;
-    EMAIL_PORT: number;
-    EMAIL_AUTH_USER: string;
-    EMAIL_AUTH_PASS: string;
-    EMAIL_FROM: string;
-    EMAIL_TO: string;
+    // aws
+    AWS_ACCESS_KEY_ID: string;
+    AWS_SECRET_ACCESS_KEY: string;
+    AWS_REGION: string;
+    S3_BUCKET_NAME: string;
   }
 }
