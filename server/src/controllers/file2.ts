@@ -69,9 +69,6 @@ const downloadFile = async (req: Request, res: Response) => {
     const s3Response = await s3Client.send(command);
     console.log("s3Response:", s3Response);
 
-    // const str = await s3Response.Body?.transformToString("base64");
-    // console.log("str:", str);
-
     if (!s3Response.Body) {
       throw new Error("No s3 response body");
     }
